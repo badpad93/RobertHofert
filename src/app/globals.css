@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-border: rgba(76, 15, 14, 0.15);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-warmwhite text-charcoal font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading uppercase tracking-tight text-burgundy;
+  }
+
+  /* Visible keyboard focus for accessibility */
+  :focus-visible {
+    outline: 3px solid #ffb515;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Gold divider used under section headings, echoing the flyer */
+  .gold-rule {
+    @apply block h-1 w-16 rounded-full bg-gold;
+  }
+
+  /* Thin gold-bordered card */
+  .card-brand {
+    @apply rounded-2xl border border-brand bg-white shadow-card transition-shadow duration-300;
+  }
+
+  /* Gold-highlighted word inside a heading */
+  .text-highlight {
+    @apply text-gold;
+  }
+
+  .link-underline {
+    @apply underline decoration-gold decoration-2 underline-offset-4;
+  }
+}
+
+@layer utilities {
+  /* Reveal-on-scroll: starts hidden, animates in when .is-visible is added.
+     Falls back to visible when reduced motion is preferred. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
