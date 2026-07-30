@@ -85,7 +85,7 @@ src/
 `Header`, `MobileNavigation`, `Footer`, `HeroSection`, `PageHero`,
 `SectionHeading`, `CTAButton`, `CTABanner`, `FeatureCard`, `IndustryCard`,
 `ProcessStep`, `ContactForm`, `FAQAccordion`, `QualificationCallout`,
-`Breadcrumbs`, `Logo`, `CoolerIllustration`, `Reveal`.
+`Breadcrumbs`, `Logo`, `CoolerImage`, `CoolerIllustration`, `Reveal`.
 
 ---
 
@@ -146,10 +146,16 @@ test the full flow without Resend.
   offer. **Replace this file** with the owner's final high-resolution flyer
   (keep the same filename/path). It is used in the homepage promotional section
   and as the Open Graph / Twitter share image.
-- The hero and product **cooler graphic** is an original inline SVG
-  (`src/components/CoolerIllustration.tsx`) — not a manufacturer photo. If a
-  real, cleanly-backgrounded product photo becomes available, drop it into
-  `public/images/` and swap it into `HeroSection` / product sections.
+- `public/images/ai-cooler.jpg` — the **AI cooler product photo** shown in the
+  hero and product sections (via `src/components/CoolerImage.tsx`). The file
+  currently in the repo is an on-brand **portrait placeholder**. **To use the
+  real product photo, simply replace this one file** — keep the path/filename
+  `public/images/ai-cooler.jpg`. The component uses `object-contain` inside a
+  fixed portrait frame, so a replacement of any dimensions displays fully
+  without cropping. A tall (roughly 2:3) photo on a clean/neutral background
+  looks best.
+- `src/components/CoolerIllustration.tsx` — an original inline SVG cooler
+  illustration, kept as a no-dependency fallback (not currently rendered).
 - `src/app/icon.svg` — an in-house **RVRH monogram** favicon. No third-party
   manufacturer logo is used anywhere as RVRH branding.
 
@@ -202,8 +208,9 @@ required for the site to run:
 
 1. **Final flyer image** — high-resolution version to replace the placeholder
    at `public/images/rvrh-ai-cooler-flyer.jpg`.
-2. **Product photo(s)** — a real, cleanly-backgrounded AI cooler image for the
-   hero/product sections (optional; an original illustration is used today).
+2. **Product photo(s)** — the real AI cooler photo to replace the placeholder at
+   `public/images/ai-cooler.jpg` (hero/product sections). A tall ~2:3 image on a
+   clean background works best.
 3. **Resend credentials** — API key, verified sending domain, and confirmed
    `CONTACT_TO_EMAIL` to enable live email delivery.
 4. **Production domain** — to set `NEXT_PUBLIC_SITE_URL` for canonical URLs and

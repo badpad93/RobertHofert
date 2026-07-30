@@ -16,7 +16,7 @@ import SectionHeading from "@/components/SectionHeading";
 import QualificationCallout from "@/components/QualificationCallout";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
-import CoolerIllustration from "@/components/CoolerIllustration";
+import CoolerImage from "@/components/CoolerImage";
 
 export const metadata: Metadata = {
   title: "AI Cooler Products & Managed Services",
@@ -240,7 +240,7 @@ export default function ProductsServicesPage() {
             </div>
             <div className="mx-auto hidden w-full max-w-[280px] lg:block">
               <div className="rounded-3xl border-2 border-gold/40 bg-burgundy p-6">
-                <CoolerIllustration className="h-auto w-full" />
+                <CoolerImage sizes="280px" />
               </div>
             </div>
           </div>

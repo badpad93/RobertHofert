@@ -1,6 +1,6 @@
 import { Phone, ShieldCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
-import CoolerIllustration from "@/components/CoolerIllustration";
+import CoolerImage from "@/components/CoolerImage";
 import { site } from "@/lib/site";
 
 export default function HeroSection() {
@@ -59,7 +59,7 @@ export default function HeroSection() {
           {/* Visual */}
           <div className="relative mx-auto w-full max-w-sm">
             <div className="rounded-3xl border-2 border-gold/40 bg-burgundy-dark/60 p-6 shadow-card-hover sm:p-8">
-              <CoolerIllustration className="mx-auto h-auto w-full max-w-[320px]" />
+              <CoolerImage className="mx-auto max-w-[320px]" priority />
             </div>
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-gold/40 bg-burgundy px-5 py-2 text-center font-heading text-sm font-semibold uppercase tracking-wide text-gold-bright shadow-card">
               Get Your Free AI Cooler
